@@ -1,0 +1,434 @@
+{
+    "version": 1,
+    "author": "Spice & Silk Road Monopoly SIH Pro",
+    "editor": "wokwi",
+    "parts": [
+        {
+            "type": "wokwi-arduino-mega",
+            "id": "mega",
+            "top": 140,
+            "left": 120,
+            "attrs": {}
+        },
+        {
+            "type": "wokwi-lcd2004",
+            "id": "lcd",
+            "top": -110,
+            "left": 220,
+            "attrs": {
+                "pins": "i2c",
+                "i2cAddress": "0x27"
+            }
+        },
+        {
+            "type": "wokwi-neopixel-strip",
+            "id": "strip",
+            "top": 85,
+            "left": 250,
+            "attrs": {
+                "pixels": "8"
+            }
+        },
+        {
+            "type": "wokwi-servo",
+            "id": "gate_servo",
+            "top": 120,
+            "left": 600,
+            "attrs": {
+                "label": "Harbor Gate"
+            }
+        },
+        {
+            "type": "wokwi-ky-040",
+            "id": "trade_dial",
+            "top": 280,
+            "left": 600,
+            "attrs": {
+                "label": "Trade Dial"
+            }
+        },
+        {
+            "type": "wokwi-buzzer",
+            "id": "buzzer",
+            "top": 450,
+            "left": 620,
+            "attrs": {}
+        },
+        {
+            "type": "wokwi-pushbutton",
+            "id": "port_calicut",
+            "top": 460,
+            "left": 40,
+            "attrs": {
+                "color": "blue",
+                "label": "Calicut"
+            }
+        },
+        {
+            "type": "wokwi-pushbutton",
+            "id": "port_lothal",
+            "top": 460,
+            "left": 130,
+            "attrs": {
+                "color": "blue",
+                "label": "Lothal"
+            }
+        },
+        {
+            "type": "wokwi-pushbutton",
+            "id": "port_muziris",
+            "top": 460,
+            "left": 220,
+            "attrs": {
+                "color": "blue",
+                "label": "Muziris"
+            }
+        },
+        {
+            "type": "wokwi-pushbutton",
+            "id": "port_taxila",
+            "top": 460,
+            "left": 310,
+            "attrs": {
+                "color": "blue",
+                "label": "Taxila"
+            }
+        },
+        {
+            "type": "wokwi-pushbutton",
+            "id": "btn_a",
+            "top": 540,
+            "left": 40,
+            "attrs": {
+                "color": "green",
+                "label": "A"
+            }
+        },
+        {
+            "type": "wokwi-pushbutton",
+            "id": "btn_b",
+            "top": 540,
+            "left": 130,
+            "attrs": {
+                "color": "red",
+                "label": "B"
+            }
+        },
+        {
+            "type": "wokwi-pushbutton",
+            "id": "btn_c",
+            "top": 540,
+            "left": 220,
+            "attrs": {
+                "color": "yellow",
+                "label": "C"
+            }
+        },
+        {
+            "type": "wokwi-pushbutton",
+            "id": "btn_d",
+            "top": 540,
+            "left": 310,
+            "attrs": {
+                "color": "orange",
+                "label": "D"
+            }
+        },
+        {
+            "type": "wokwi-led",
+            "id": "maglev_led",
+            "top": 5,
+            "left": 620,
+            "attrs": {
+                "color": "white",
+                "label": "MAGLEV"
+            }
+        }
+    ],
+    "connections": [
+        [
+            "mega:20",
+            "lcd:SDA",
+            "blue",
+            [
+                "v-40",
+                "h40"
+            ]
+        ],
+        [
+            "mega:21",
+            "lcd:SCL",
+            "yellow",
+            [
+                "v-50",
+                "h50"
+            ]
+        ],
+        [
+            "mega:5V.1",
+            "lcd:VCC",
+            "red",
+            [
+                "v-60",
+                "h60"
+            ]
+        ],
+        [
+            "mega:GND.1",
+            "lcd:GND",
+            "black",
+            [
+                "v-70",
+                "h70"
+            ]
+        ],
+        [
+            "mega:6",
+            "strip:DIN",
+            "green",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "mega:5V.2",
+            "strip:VDD",
+            "red",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "mega:GND.2",
+            "strip:VSS",
+            "black",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "mega:12",
+            "gate_servo:PWM",
+            "orange",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "mega:5V.2",
+            "gate_servo:V+",
+            "red",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "mega:GND.2",
+            "gate_servo:GND",
+            "black",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "mega:18",
+            "trade_dial:CLK",
+            "purple",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "mega:19",
+            "trade_dial:DT",
+            "cyan",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "mega:14",
+            "trade_dial:SW",
+            "white",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "mega:5V.3",
+            "trade_dial:VCC",
+            "red",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "mega:GND.3",
+            "trade_dial:GND",
+            "black",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "mega:8",
+            "buzzer:1",
+            "purple",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "mega:GND.3",
+            "buzzer:2",
+            "black",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "mega:2",
+            "port_calicut:1.l",
+            "blue",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "mega:GND.4",
+            "port_calicut:2.l",
+            "black",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "mega:9",
+            "port_lothal:1.l",
+            "blue",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "mega:GND.4",
+            "port_lothal:2.l",
+            "black",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "mega:10",
+            "port_muziris:1.l",
+            "blue",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "mega:GND.4",
+            "port_muziris:2.l",
+            "black",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "mega:11",
+            "port_taxila:1.l",
+            "blue",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "mega:GND.4",
+            "port_taxila:2.l",
+            "black",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "mega:3",
+            "btn_a:1.l",
+            "green",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "mega:GND.5",
+            "btn_a:2.l",
+            "black",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "mega:4",
+            "btn_b:1.l",
+            "red",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "mega:GND.5",
+            "btn_b:2.l",
+            "black",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "mega:5",
+            "btn_c:1.l",
+            "yellow",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "mega:GND.5",
+            "btn_c:2.l",
+            "black",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "mega:7",
+            "btn_d:1.l",
+            "orange",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "mega:GND.5",
+            "btn_d:2.l",
+            "black",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "maglev_led:A",
+            "mega:22",
+            "white",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "maglev_led:C",
+            "mega:GND.2",
+            "black",
+            [
+                "v0"
+            ]
+        ]
+    ]
+}
